@@ -39,13 +39,15 @@ void Preleva(int conto, int soldi){
             return true;
         }
         else{
+            cout << "prelevo: " << soldi << " euro" << endl;
+            conto -= soldit;
             return false;
         }
 
 
     });
 
-    conto -= soldi;
+    
 
 
 }
@@ -56,7 +58,7 @@ int main() {
 
 
     int n = random()%1000 + 1;
-    cout << "prelevo: " << n << " euro" << endl;
+    
     thread th1(AggiungiSoldi);
     thread th2(Preleva, ref(conto), n);
 
